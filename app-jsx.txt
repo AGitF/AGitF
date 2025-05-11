@@ -1,0 +1,27 @@
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/layout/Layout';
+import Dashboard from './pages/Dashboard';
+import CalendarPage from './pages/CalendarPage';
+import CRMPage from './pages/CRMPage';
+import FinancePage from './pages/FinancePage';
+import SettingsPage from './pages/SettingsPage';
+
+function App() {
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/calendar" element={<CalendarPage />} />
+        <Route path="/crm" element={<CRMPage />} />
+        <Route path="/finance" element={<FinancePage />} />
+        <Route path="/finance/invoicing" element={<FinancePage section="invoicing" />} />
+        <Route path="/finance/accounts-payable" element={<FinancePage section="accounts-payable" />} />
+        <Route path="/finance/accounts-receivable" element={<FinancePage section="accounts-receivable" />} />
+        <Route path="/settings" element={<SettingsPage />} />
+      </Routes>
+    </Layout>
+  );
+}
+
+export default App;
